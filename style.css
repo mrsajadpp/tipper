@@ -178,7 +178,8 @@ hr{
   color: black;
 }
 .contact-us{
-  padding: 10px 100px;
+  margin-left: 24%;
+  margin-right: 24%;
 }
 .signin-btn{
   background-color: #0088ff;
