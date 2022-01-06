@@ -123,7 +123,7 @@ hr{
 }
 .image img{
   height: 70px;
-  padding: 140px 85px;
+  margin-top: 40%;
 }
 .header-menu{
   padding: 15px 20px;
