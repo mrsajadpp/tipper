@@ -181,16 +181,6 @@ hr{
   margin-left: 24%;
   margin-right: 24%;
 }
-.signin-btn{
-  background-color: #0088ff;
-  border: none;
-  border-radius: 5px;
-  height: 35px;
-  width: 80px;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-}
 #menu{
   cursor: pointer;
   margin-top: -2px;
@@ -200,16 +190,7 @@ hr{
   margin-left: 300px;
   margin-top: -35px;
 }
-.signin-btn:hover{
-  background-color: #0055ff;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-}
-.signin-btn a{
-  text-decoration: none;
-  color: white;
-}
+
 .dark-mode {
   background-color: white;
   color: black;
