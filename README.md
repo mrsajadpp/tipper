@@ -1,2 +1,2 @@
-# boobusearch
-Powered by Saju Talk
+# tipper
+Powered by TechStrap Studio
