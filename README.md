@@ -1,2 +1,2 @@
-# tipper
+# Tipper
 Powered by Saju Talk
