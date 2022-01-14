@@ -1,2 +1,2 @@
 # tipper
-Powered by TechStrap Studio
+Powered by Saju Talk
