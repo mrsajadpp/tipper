@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name='bulletprofit' content='o8cCNLfNTkeyO1XHcLrK'/>
-<meta name="google-site-verification" content="vHNvVQgRzDdDbacO_fALg91NhS51equcgfkpn2IKcGo" />
 
   <title>Tipper</title>
   
@@ -19,23 +17,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "40d5b54a-bee5-4b8b-a2ba-5b2d990963d5",
-    });
-  });
-</script>
 
-<script data-ad-client="ca-pub-4526187445534633" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
 </head>
 
 <body class="dark-mode">
-     <div class="loader">
-      <img src="Curve-Loading-1.gifc.gif" alt="Loading..." style="width: 70px; height: 70px;">
-    </div>
+     <!--<div class="loader">
+       <div class="container">
+    <div class="dot dot1"></div>
+    <div class="dot dot2"></div>
+    <div class="dot dot3"></div>
+  </div>
+    </div>-->
   <div class="header">
     <div class="header-menu">
     <i id="menu" class="material-icons">
@@ -111,8 +105,35 @@ settings
 search
 </i>
 </button>
-  </div></center></div>
+  </div></center>
+    <div class="video-section">
+  
+  <!--Videos starts-->
+  
+    <div class="videos">
+        <div class="videos-container">
 
+            <!--Single videos starts-->
+            <!--<div class="video">
+        <img src="${data.snippet.thumbnails.high.url}" class="thumbnail" alt="">
+        <div class="content">
+            <img src="${data.channelThumbnail}" class="channel-icon" alt="">
+            <div class="info">
+                <h4 class="title">${data.snippet.title}</h4>
+                <p class="channel-name"${data.snippet.channelTitle}></p>
+            </div>
+        </div>
+    </div>-->
+                <!--Single videos ends-->
+            
+            </div>
+            </div>
+            <!--Video ends-->
+  </div>
+  </div>
+  
+
+  
   <div class="footer-section">
     <center>
     <div class="contact-us">
@@ -125,7 +146,7 @@ search
     </div></center>
     <p><span><a href="terms.html">Terms and conditions</a></span> <span>|</span> <span><a href="privacy.html">Privacy policy</a></span></p>
     <h6>&copy;All 2021 2022 rights reserved</h6>
-      <div class="other-div"><p>Powered by Saju Talk</p></div>
+      <div class="other-div"><p>Powered by <a href="https://youtube.com/c/SajuTalk">Saju Talk</a></p></div>
       
       <center><script class="advertising">
 
@@ -159,6 +180,64 @@ var _0x28f9=["\x3C\x68\x32\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x
   </div>
 
   <!-- Project -->
+  
+  <script>
+    const videoCardContainer = document.querySelector('.videos-container');
+let api_key ="AIzaSyBf0PDQ7MWvfNuR0WY1PgwJzLHt10uZqlI";
+let video_http ="https://www.googleapis.com/youtube/v3/videos?";
+let channel_http = "https://www.googleapis.com/youtube/v3/channels?"
+
+fetch(video_http + new URLSearchParams({
+    key: api_key,
+    part: 'snippet',
+    chart: 'mostPopular',
+    maxResults: 500,
+    regionCode: 'IN' 
+}))
+.then(res => res.json())
+.then(data => {
+    data.items.forEach(item => {
+        getChannelIcon(item);
+    })
+})
+.catch(err => console.log(err))
+
+const getChannelIcon = (video_data) => {
+    fetch(channel_http + new URLSearchParams({
+        key: api_key,
+        part: 'snippet',
+        id: video_data.snippet.channelId
+    }))
+    .then(res => res.json())
+    .then(data => {
+        video_data.channelThumbnail = data.items[0].snippet.thumbnails.default.url;
+        makeVideoCard(video_data);
+    })
+}
+const makeVideoCard = (data) => {
+    videoCardContainer.innerHTML += `
+    <div class="video" onclick="location.href = 'https://youtube.com/watch?v=${data.id}'">
+                <div class="videos"onclick="location.href = 'https://youtube.com/watch?v=${data.id}'" >
+        <center><img src="${data.snippet.thumbnails.high.url}" class="thumbnail" alt=""></center>
+        <div class="content">
+        <div class="title-icon">
+            <img src="${data.channelThumbnail}" class="channel-icon" alt="">
+            <div class="info">
+                <h4 class="title">${data.snippet.title}</h4>
+                </div>
+                <p class="channel-name"${data.snippet.channelTitle}></p>
+            </div>
+        </div>
+    </div>
+    `;
+}
+const menu = document.querySelector('#menu');
+const sidebar = document.querySelector('.sidebar');
+menu.addEventListener('click', function() {
+    sidebar.classList.toggle('show-sidebar');
+})
+
+  </script>
   <script src="main.js"></script>
 </body>
 </html>
