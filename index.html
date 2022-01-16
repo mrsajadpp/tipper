@@ -114,6 +114,14 @@ settings
 search
 </i>
 </button>
+<script>const searchInput = document.querySelector('.search-bar');
+const searchBtn = document.querySelector('.search-btn');
+let searchLink = "https://www.google.com/search?q=";
+searchBtn.addEventListener('click', () => {
+    if(searchInput.value.length){
+        location.href = searchLink + searchInput.value;
+    }
+})</script>
   </div></center>
     <div class="video-section">
   
