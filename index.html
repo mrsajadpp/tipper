@@ -235,10 +235,10 @@ const makeVideoCard = (data) => {
     videoCardContainer.innerHTML += `
     <div class="video" onclick="location.href = 'https://youtube.com/watch?v=${data.id}'">
                 <div class="videos"onclick="location.href = 'https://youtube.com/watch?v=${data.id}'" >
-        <center><img src="${data.snippet.thumbnails.high.url}" class="thumbnail" alt=""></center>
+        <center><img src="${data.snippet.thumbnails.high.url}" class="thumbnail" alt="tipper"></center>
         <div class="content">
         <div class="title-icon">
-            <img src="${data.channelThumbnail}" class="channel-icon" alt="">
+            <img src="${data.channelThumbnail}" class="channel-icon" alt="tipper">
             <div class="info">
                 <h4 class="title">${data.snippet.title}</h4>
                 </div>
